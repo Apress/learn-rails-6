@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<%= render("form", greeting: Greeting.new) %>
+
+<br/>
+<% @greetings.each do |greeting| %>
+  <div class="media">
+    <img src="<%= gravatarized_url(greeting.name) %>"
+      class="align-self-start mr-3">
+    <div class="media-body">
+      <h5 class="mt-0"><%= greeting.name %></h5>
+      <%= simple_format(greeting.message) %>
+    </div>
+  </div>
+  <br/>
+<% end %>
